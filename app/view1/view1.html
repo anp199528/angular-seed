@@ -1,4 +1,4 @@
-<!-- <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
 <form class="form-inline">
     <div class="form-group">
         <label >Search</label>
@@ -50,8 +50,8 @@
                 </p>
                 <p ng-if="arr.length>5"  >
                     {{arr[0]+","+arr[1]+","+arr[2]+","+arr[3]+","+arr[4]}}
-                <strong >
-                    read more
+                <strong ng-click="showData(d.artist)" >
+                    read more...
                 </strong>
                 </p>
             </td>
@@ -65,4 +65,4 @@
         max-size="5"
         direction-links="true"
         boundary-links="true" >
-    </dir-pagination-controls> -->
+    </dir-pagination-controls>
