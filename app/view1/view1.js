@@ -123,30 +123,50 @@ angular.module('myApp.view1', ['ngRoute', 'angularUtils.directives.dirPagination
       }
     ];
 
-    $scope.showPopup = function (x) {
-      alert(x);
-    };
-
     $scope.sort = function (keyname) {
       $scope.sortKey = keyname;
       $scope.reverse = !$scope.reverse;
     };
     $scope.showData = function (a) {
       // alert(a);
+      // $scope.x={'data':'a'};
+      let vm =this;
+      vm.d=a;
+      user = {'first_name':'JON','last_name':'Smith','address':'Ny'};
       $scope.modalInstance = $uibModal.open({
         ariaLabelledBy: 'modal-title',
         ariaDescribedBy: 'modal-body',
         templateUrl: 'view1/modal.html',
-        controller: 'ModelHandlerController',
         controllerAs: '$ctrl',
-        size: 'lg'
-      })
+        size: 'lg',
+        // resolve: {
+        //    x:function(){
+        //      return vm.d;
+        //    }
+        // },
+        resolve: {
+          user: function(){
+            return user;
+           }
+        },
+        controller: 'ModelHandlerController'
+      });
+      console.log($scope.modalInstance);
     };
-  })
-  .controller("ModelHandlerController", function ($scope, $uibModalInstance, $http) {
 
+  })
+  .controller("ModelHandlerController",ModalController);
+  //  ModalController.$inject=['x'];
+  function ModalController ($scope, $uibModalInstance, $http) {
+    // $scope.data=x;
+    $scope.first_name = user.first_name;
+		$scope.last_name = user.last_name;
+		$scope.address  = user.address;
+    // let vm=this;
+// vm.data=x;
+    // console.log(x);
     $scope.cancelModal = function () {
       console.log("cancelmodal");
       $uibModalInstance.dismiss('close');
     }
-  });	
+  };	
