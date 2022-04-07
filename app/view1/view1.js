@@ -128,43 +128,33 @@ angular.module('myApp.view1', ['ngRoute', 'angularUtils.directives.dirPagination
       $scope.reverse = !$scope.reverse;
     };
     $scope.showData = function (a) {
-      // alert(a);
-      // $scope.x={'data':'a'};
-      let vm =this;
-      vm.d=a;
-      user = {'first_name':'JON','last_name':'Smith','address':'Ny'};
+      // let vm =this;
+      // vm.user= a;
+      console.log(a);
+      $scope.selected=a;
       $scope.modalInstance = $uibModal.open({
         ariaLabelledBy: 'modal-title',
         ariaDescribedBy: 'modal-body',
         templateUrl: 'view1/modal.html',
-        controllerAs: '$ctrl',
+        // controllerAs: '$ctrl',
         size: 'lg',
-        // resolve: {
-        //    x:function(){
-        //      return vm.d;
-        //    }
-        // },
         resolve: {
           user: function(){
-            return user;
+            console.log($scope.selected);
+            return $scope.selected;
            }
         },
         controller: 'ModelHandlerController'
       });
-      console.log($scope.modalInstance);
+      // console.log($scope.modalInstance);
     };
 
   })
   .controller("ModelHandlerController",ModalController);
-  //  ModalController.$inject=['x'];
-  function ModalController ($scope, $uibModalInstance, $http) {
-    // $scope.data=x;
-    $scope.first_name = user.first_name;
-		$scope.last_name = user.last_name;
-		$scope.address  = user.address;
-    // let vm=this;
-// vm.data=x;
-    // console.log(x);
+  function ModalController ($scope, $uibModalInstance,user,$http) {
+   
+     $scope.data=user;
+    console.log(user);
     $scope.cancelModal = function () {
       console.log("cancelmodal");
       $uibModalInstance.dismiss('close');
