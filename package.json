@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "description": "A starter project for AngularJS",
-  "repository": "https://github.com/anp199528/table",
+  "repository": "https://github.com/anp199528/table1",
   "license": "MIT",
   "dependencies": {
     "angular": "^1.8.2",
