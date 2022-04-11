@@ -150,13 +150,13 @@ angular.module('myApp.view1', ['ngRoute', 'angularUtils.directives.dirPagination
     };
 
   })
-  .controller("ModelHandlerController",ModalController);
-  function ModalController ($scope, $uibModalInstance,user,$http) {
+  .controller("ModelHandlerController",function ModalController ($scope,user, $uibModalInstance,$http) {
+  
    
-     $scope.data=user;
+     $scope.data=user.artist;
     console.log(user);
     $scope.cancelModal = function () {
       console.log("cancelmodal");
       $uibModalInstance.dismiss('close');
     }
-  };	
+  });	
