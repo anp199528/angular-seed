@@ -2,13 +2,239 @@
 
 angular.module('myApp.view2', ['ngRoute'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
+  .config(['$routeProvider', function ($routeProvider) {
+    $routeProvider.when('/view2', {
+      templateUrl: 'view2/view2.html',
+      controller: 'View2Ctrl'
+    });
+  }])
+
+  .controller('View2Ctrl', function ($scope) {
+    $scope.data = [
+      {
+        "sendGridEmailLogID": 1131,
+        "created": 1597091355,
+        "email": "test@test.com",
+        "event": "bounce",
+        "ip": null,
+        "reason": "550 5.1.1",
+        "subject": "Chart You",
+        "type": "bounce",
+        "sendGridUTC": "2020-08-10T20:29:15",
+        "sendGridPST": "2020-08-10T13:29:15",
+        "sendGridUTCDisplay": "Monday, August 10, 2020 8:29:15 PM",
+        "sendGridPSTDisplay": "Monday, August 10, 2020 1:29:15 PM",
+        "employeeName": "",
+        "clientName": null,
+        "ein": null,
+        "status": "bounce",
+        "dateSent": "2020-08-10T20:29:13.56",
+        "emailSent": "Chart Your Course"
+      },
+      {
+        "sendGridEmailLogID": 1131,
+        "created": 1597091355,
+        "email": "test@test.com",
+        "event": "bounce",
+        "ip": null,
+        "reason": "550 5.1.1",
+        "subject": "Chart You",
+        "type": "bounce",
+        "sendGridUTC": "2020-08-10T20:29:15",
+        "sendGridPST": "2020-08-10T13:29:15",
+        "sendGridUTCDisplay": "Monday, August 10, 2020 8:29:15 PM",
+        "sendGridPSTDisplay": "Monday, August 10, 2020 1:29:15 PM",
+        "employeeName": "",
+        "clientName": null,
+        "ein": null,
+        "status": "bounce",
+        "dateSent": "2020-08-10T20:29:13.56",
+        "emailSent": "Chart Your Course"
+      },
+      {
+        "sendGridEmailLogID": 1131,
+        "created": 1597091355,
+        "email": "test@test.com",
+        "event": "bounce",
+        "ip": null,
+        "reason": "550 5.1.1",
+        "subject": "Chart You",
+        "type": "bounce",
+        "sendGridUTC": "2020-08-10T20:29:15",
+        "sendGridPST": "2020-08-10T13:29:15",
+        "sendGridUTCDisplay": "Monday, August 10, 2020 8:29:15 PM",
+        "sendGridPSTDisplay": "Monday, August 10, 2020 1:29:15 PM",
+        "employeeName": "",
+        "clientName": null,
+        "ein": null,
+        "status": "bounce",
+        "dateSent": "2020-08-10T20:29:13.56",
+        "emailSent": "Chart Your Course"
+      },
+      {
+        "sendGridEmailLogID": 1131,
+        "created": 1597091355,
+        "email": "test@test.com",
+        "event": "bounce",
+        "ip": null,
+        "reason": "550 5.1.1",
+        "subject": "Chart You",
+        "type": "bounce",
+        "sendGridUTC": "2020-08-10T20:29:15",
+        "sendGridPST": "2020-08-10T13:29:15",
+        "sendGridUTCDisplay": "Monday, August 10, 2020 8:29:15 PM",
+        "sendGridPSTDisplay": "Monday, August 10, 2020 1:29:15 PM",
+        "employeeName": "",
+        "clientName": null,
+        "ein": null,
+        "status": "bounce",
+        "dateSent": "2020-08-10T20:29:13.56",
+        "emailSent": "Chart Your Course"
+      },
+      {
+        "sendGridEmailLogID": 1131,
+        "created": 1597091355,
+        "email": "test@test.com",
+        "event": "bounce",
+        "ip": null,
+        "reason": "550 5.1.1",
+        "subject": "Chart You",
+        "type": "bounce",
+        "sendGridUTC": "2020-08-10T20:29:15",
+        "sendGridPST": "2020-08-10T13:29:15",
+        "sendGridUTCDisplay": "Monday, August 10, 2020 8:29:15 PM",
+        "sendGridPSTDisplay": "Monday, August 10, 2020 1:29:15 PM",
+        "employeeName": "",
+        "clientName": null,
+        "ein": null,
+        "status": "bounce",
+        "dateSent": "2020-08-10T20:29:13.56",
+        "emailSent": "Chart Your Course"
+      },
+      {
+        "sendGridEmailLogID": 1131,
+        "created": 1597091355,
+        "email": "test@test.com",
+        "event": "bounce",
+        "ip": null,
+        "reason": "550 5.1.1",
+        "subject": "Chart You",
+        "type": "bounce",
+        "sendGridUTC": "2020-08-10T20:29:15",
+        "sendGridPST": "2020-08-10T13:29:15",
+        "sendGridUTCDisplay": "Monday, August 10, 2020 8:29:15 PM",
+        "sendGridPSTDisplay": "Monday, August 10, 2020 1:29:15 PM",
+        "employeeName": "",
+        "clientName": null,
+        "ein": null,
+        "status": "bounce",
+        "dateSent": "2020-08-10T20:29:13.56",
+        "emailSent": "Chart Your Course"
+      },
+      {
+        "sendGridEmailLogID": 1131,
+        "created": 1597091355,
+        "email": "test@test.com",
+        "event": "bounce",
+        "ip": null,
+        "reason": "550 5.1.1",
+        "subject": "Chart You",
+        "type": "bounce",
+        "sendGridUTC": "2020-08-10T20:29:15",
+        "sendGridPST": "2020-08-10T13:29:15",
+        "sendGridUTCDisplay": "Monday, August 10, 2020 8:29:15 PM",
+        "sendGridPSTDisplay": "Monday, August 10, 2020 1:29:15 PM",
+        "employeeName": "",
+        "clientName": null,
+        "ein": null,
+        "status": "bounce",
+        "dateSent": "2020-08-10T20:29:13.56",
+        "emailSent": "Chart Your Course"
+      },
+      {
+        "sendGridEmailLogID": 1131,
+        "created": 1597091355,
+        "email": "test@test.com",
+        "event": "bounce",
+        "ip": null,
+        "reason": "550 5.1.1",
+        "subject": "Chart You",
+        "type": "bounce",
+        "sendGridUTC": "2020-08-10T20:29:15",
+        "sendGridPST": "2020-08-10T13:29:15",
+        "sendGridUTCDisplay": "Monday, August 10, 2020 8:29:15 PM",
+        "sendGridPSTDisplay": "Monday, August 10, 2020 1:29:15 PM",
+        "employeeName": "",
+        "clientName": null,
+        "ein": null,
+        "status": "bounce",
+        "dateSent": "2020-08-10T20:29:13.56",
+        "emailSent": "Chart Your Course"
+      },
+      {
+        "sendGridEmailLogID": 1131,
+        "created": 1597091355,
+        "email": "test@test.com",
+        "event": "bounce",
+        "ip": null,
+        "reason": "550 5.1.1",
+        "subject": "Chart You",
+        "type": "bounce",
+        "sendGridUTC": "2020-08-10T20:29:15",
+        "sendGridPST": "2020-08-10T13:29:15",
+        "sendGridUTCDisplay": "Monday, August 10, 2020 8:29:15 PM",
+        "sendGridPSTDisplay": "Monday, August 10, 2020 1:29:15 PM",
+        "employeeName": "",
+        "clientName": null,
+        "ein": null,
+        "status": "bounce",
+        "dateSent": "2020-08-10T20:29:13.56",
+        "emailSent": "Chart Your Course"
+      },
+      {
+        "sendGridEmailLogID": 1131,
+        "created": 1597091355,
+        "email": "test@test.com",
+        "event": "bounce",
+        "ip": null,
+        "reason": "550 5.1.1",
+        "subject": "Chart You",
+        "type": "bounce",
+        "sendGridUTC": "2020-08-10T20:29:15",
+        "sendGridPST": "2020-08-10T13:29:15",
+        "sendGridUTCDisplay": "Monday, August 10, 2020 8:29:15 PM",
+        "sendGridPSTDisplay": "Monday, August 10, 2020 1:29:15 PM",
+        "employeeName": "",
+        "clientName": null,
+        "ein": null,
+        "status": "bounce",
+        "dateSent": "2020-08-10T20:29:13.56",
+        "emailSent": "Chart Your Course"
+      },
+      {
+        "sendGridEmailLogID": 1131,
+        "created": 1597091355,
+        "email": "test@test.com",
+        "event": "bounce",
+        "ip": null,
+        "reason": "550 5.1.1",
+        "subject": "Chart You",
+        "type": "bounce",
+        "sendGridUTC": "2020-08-10T20:29:15",
+        "sendGridPST": "2020-08-10T13:29:15",
+        "sendGridUTCDisplay": "Monday, August 10, 2020 8:29:15 PM",
+        "sendGridPSTDisplay": "Monday, August 10, 2020 1:29:15 PM",
+        "employeeName": "",
+        "clientName": null,
+        "ein": null,
+        "status": "bounce",
+        "dateSent": "2020-08-10T20:29:13.56",
+        "emailSent": "Chart Your Course"
+      }
+    ];
+
+    $scope.sort = function (keyname) {
+      $scope.sortKey = keyname;
+      $scope.reverse = !$scope.reverse;
+    };
   });
-}])
-
-.controller('View2Ctrl', [function() {
-
-}]);

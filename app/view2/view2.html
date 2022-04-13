@@ -1,5 +1,109 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
+<form class="form-inline">
+  <div class="form-group">
+    <label>Search</label>
+    <input type="text" ng-model="search" class="form-control" placeholder="Search">
+  </div>
+</form>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th ng-click="sort('sendGridEmailLogID')">Id
+        <span class="glyphicon sort-icon" ng-show="sortKey=='sendGridEmailLogID'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('created')">created
+        <span class="glyphicon sort-icon" ng-show="sortKey=='created'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('email')">email
+        <span class="glyphicon sort-icon" ng-show="sortKey=='email'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('event')">event
+        <span class="glyphicon sort-icon" ng-show="sortKey=='event"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('ip')">ip
+        <span class="glyphicon sort-icon" ng-show="sortKey=='ip'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('reason')">reason
+        <span class="glyphicon sort-icon" ng-show="sortKey=='reason'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('subject')">subject
+        <span class="glyphicon sort-icon" ng-show="sortKey=='subject'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('type')">type
+        <span class="glyphicon sort-icon" ng-show="sortKey=='type'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('sendGridUTC')">sendGridUTC
+        <span class="glyphicon sort-icon" ng-show="sortKey=='sendGridUTC'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('sendGridPST')">sendGridPST
+        <span class="glyphicon sort-icon" ng-show="sortKey=='sendGridPST'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('sendGridUTCDisplay')">sendGridUTCDisplay
+        <span class="glyphicon sort-icon" ng-show="sortKey=='sendGridUTCDisplay'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('sendGridPSTDisplay')">sendGridPSTDisplay
+        <span class="glyphicon sort-icon" ng-show="sortKey=='sendGridPSTDisplay'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('employeeName')">employeeName
+        <span class="glyphicon sort-icon" ng-show="sortKey=='employeeName'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('clientName')">clientName
+        <span class="glyphicon sort-icon" ng-show="sortKey=='clientName'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('ein')">ein
+        <span class="glyphicon sort-icon" ng-show="sortKey=='ein'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('status')">status
+        <span class="glyphicon sort-icon" ng-show="sortKey=='status'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('dateSent')">dateSent
+        <span class="glyphicon sort-icon" ng-show="sortKey=='dateSent'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('emailSent')">emailSent
+        <span class="glyphicon sort-icon" ng-show="sortKey=='emailSent'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr dir-paginate="d in data|orderBy:sortKey:reverse|filter:search|itemsPerPage:5">
+      <td>{{d.sendGridEmailLogID}}</td>
+      <td>{{d.created}}</td>
+      <td>{{d.email}}</td>
+      <td>{{d.event}}</td>
+      <td>{{d.ip}}</td>
+      <td>{{d.reason}}</td>
+      <td>{{d.subject}}</td>
+      <td>{{d.type}}</td>
+      <td>{{d.sendGridUTC}}</td>
+      <td>{{d.sendGridPST}}</td>
+      <td>{{d.sendGridUTCDisplay}}</td>
+      <td>{{d.sendGridPSTDisplay}}</td>
+      <td>{{d.employeeName}}</td>
+      <td>{{d.clientName}}</td>
+      <td>{{d.ein}}</td>
+      <td>{{d.status}}</td>
+      <td>{{d.dateSent}}</td>
+      <td>{{d.emailSent}}</td>
+    </tr>
+  </tbody>
+</table>
+<dir-pagination-controls max-size="5" direction-links="true" boundary-links="true">
+</dir-pagination-controls>
