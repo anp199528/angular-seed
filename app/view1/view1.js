@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute', 'angularUtils.directives.dirPagination','ngTouch','ngAnimate','ui.bootstrap'])
+angular.module('myApp.view1', ['ngRoute','ngMaterial', 'angularUtils.directives.dirPagination','ngTouch','ngAnimate','ui.bootstrap'])
 
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/view1', {
@@ -9,7 +9,19 @@ angular.module('myApp.view1', ['ngRoute', 'angularUtils.directives.dirPagination
     });
   }])
 
-  .controller('View1Ctrl', function ($scope,$http,$routeParams,$uibModal) {
+  .controller('View1Ctrl', function ($scope,$http,$routeParams,$uibModal,$mdDialog) {
+    $scope.showAlert = function (ev,data) {
+      $mdDialog.show(
+        $mdDialog.alert()
+          .parent(angular.element(document.querySelector('#popupContainer')))
+          .clickOutsideToClose(true)
+          .title('This is an alert title')
+          .textContent(data.artist)
+          .ariaLabel('Alert Dialog Demo')
+          .ok('OK')
+          .targetEvent(ev)
+      );
+    };
     $scope.data = [
       {
         "id": 1,
@@ -122,7 +134,7 @@ angular.module('myApp.view1', ['ngRoute', 'angularUtils.directives.dirPagination
         "songs_duration": "4:23"
       }
     ];
-
+    
     $scope.sort = function (keyname) {
       $scope.sortKey = keyname;
       $scope.reverse = !$scope.reverse;

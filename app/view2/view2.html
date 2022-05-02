@@ -1,14 +1,49 @@
 <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
-<form class="form-inline">
+<!-- <form class="form-inline">
   <div class="form-group">
     <label>Search Event</label>
-    <input type="text" ng-model="search.event" class="form-control" placeholder="Search Event">
+    <input type="text" ng-model="search.id=x" class="form-control" placeholder="Search Event">
   </div>
-</form>
+</form> -->
+<!-- uib-dropdown on-toggle="toggled(open)" -->
+<!-- uib-dropdown-menu aria-labelledby="simple-dropdown" -->
+<!-- <select>
+      <option ng-init="x"ng-click="x=0">--Select--</option>
+    <option ng-repeat="choice in items">{{choice.type}}</option>
+</select> -->
+<!-- <span uib-dropdown on-toggle="toggled(open)" ng-model="search.id=x">
+  <a href id="simple-dropdown" uib-dropdown-toggle>
+    Select Type
+  </a>
+  <ul uib-dropdown-menu aria-labelledby="simple-dropdown">
+    <li>
+      <a href ng-click="f(0)">--Select--</a>
+    </li>
+    <li ng-repeat="choice in items">
+      <a href ng-click="f(choice.id)">{{choice.type}}</a>
+    </li>
+  </ul>
+</span>
+<p>
+  {{x}}
+</p> -->
+      <div layout="row" layout-align="space-between center">
+          <md-select ng-model="search.id" placeholder="Select" class="md-no-underline">
+            <md-option value="">-Select-</md-option>
+            <md-option value="{{choice.id}}" ng-repeat="choice in items">{{choice.type}}</md-option>
+         </md-select>
+      </div>
+      <p>
+        {{y}}
+      </p>
 <table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th ng-click="sort('sendGridEmailLogID')">Id
+      <th ng-click="sort('id')">Id
+        <span class="glyphicon sort-icon" ng-show="sortKey=='sendGridEmailLogID'"
+          ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('sendGridEmailLogID')">LogId
         <span class="glyphicon sort-icon" ng-show="sortKey=='sendGridEmailLogID'"
           ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
       </th>
@@ -84,6 +119,7 @@
   </thead>
   <tbody>
     <tr dir-paginate="d in data|orderBy:sortKey:reverse|filter:search|itemsPerPage:5">
+      <td>{{d.id}}</td>
       <td>{{d.sendGridEmailLogID}}</td>
       <td>{{d.created}}</td>
       <td>{{d.email}}</td>
